@@ -1,0 +1,27 @@
+{
+    "folders":
+    [
+        {
+            "path": ".",
+        }
+    ],
+    "build_systems":
+    [
+        {
+            "name": "Jai: Compiler",
+            "working_dir": "${project_path}",
+            "file_regex": "^(..[^:]*):([0-9]+),?([0-9]+)?:? (.*)$",
+            "cmd": ["jai-macos", "${project_path}/build.jai"],
+            "variants": [
+                {
+                    "name": "Run",
+                    "shell_cmd": "jai-macos ${project_path}/build.jai && ./build_debug/slopper",
+                },
+                {
+                    "name": "No Output (Typecheck only)",
+                    "shell_cmd": "jai-macos ${project_path}/build.jai - no_output",
+                }
+            ],
+        },
+    ]
+}
