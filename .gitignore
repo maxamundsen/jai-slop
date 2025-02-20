@@ -10,3 +10,6 @@ build_release
 *.rdi
 *.exp
 *.bak
+
+# editor files
+*.sublime-workspace
